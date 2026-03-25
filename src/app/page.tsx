@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import GallerySlider from '@/components/GallerySlider'
-import HeroSlider from '@/components/HeroSlider'
+import GoldLeafCanvas from '@/components/GoldLeafCanvas'
 
 export const metadata: Metadata = {
   title: 'Delizie della Certosa — Pasticceria, Pizzeria e Panificio a Certosa di Pavia',
@@ -123,22 +123,18 @@ export default function HomePage() {
     <main>
 
       {/* ══════════════════════════════════════
-          HERO — Galleria Ken Burns + card frosted glass
+          HERO — Oro in foglia (particelle animate)
       ══════════════════════════════════════ */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-[#FDFEFC] via-[#F8F0E3] to-[#FDFEFC]">
 
-        {/* Galleria scorrevole Ken Burns */}
+        {/* Particelle oro in foglia */}
         <div className="absolute inset-0 z-0">
-          <HeroSlider />
-          {/* Overlay leggero: solo un velo rosso brand in alto */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#B20D02]/30 via-transparent to-transparent pointer-events-none" />
-          {/* Vignetta bordi molto sottile */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,0,0,0.20)_100%)] pointer-events-none" />
+          <GoldLeafCanvas />
         </div>
 
-        {/* ── Frosted glass card ── */}
+        {/* ── Contenuto centrato ── */}
         <div className="relative z-10 w-full px-4 flex justify-center">
-          <div className="hero-enter w-full max-w-2xl bg-[#FDFEFC]/80 backdrop-blur-md border border-[#C9982A]/35 rounded-3xl px-7 py-10 md:px-12 md:py-14 text-center shadow-2xl shadow-black/20">
+          <div className="hero-enter w-full max-w-2xl text-center py-16 md:py-24">
 
             {/* Gold top accent line */}
             <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-[#C9982A] to-transparent mx-auto mb-6" />
@@ -202,7 +198,7 @@ export default function HomePage() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-[#FDFEFC]/70">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-[#222C35]/40">
           <span className="text-[10px] font-sans tracking-[0.3em] uppercase">Scorri</span>
           <div className="w-px h-10 bg-gradient-to-b from-[#C9982A]/80 to-transparent" style={{ animation: 'pulse-soft 2s ease-in-out infinite' }} />
         </div>

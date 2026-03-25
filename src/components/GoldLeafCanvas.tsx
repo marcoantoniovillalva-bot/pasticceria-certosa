@@ -219,11 +219,11 @@ function drawParticle(ctx: CanvasRenderingContext2D, p: Particle) {
 }
 
 // ─── Spawn ────────────────────────────────────────────────────────────────────
-const TYPES: PType[] = ['hat', 'rollingpin', 'pipingbag', 'star', 'spoon', 'cupcake']
+const TYPES: PType[] = ['hat', 'rollingpin', 'pipingbag', 'spoon', 'cupcake']
 
 function spawn(W: number, fromTop = false): Particle {
-  // distribuzione bilanciata: più stelle e cupcake (più decorativi), meno mattarello
-  const weights = [0.18, 0.12, 0.18, 0.22, 0.15, 0.15]
+  // distribuzione bilanciata senza stelle
+  const weights = [0.22, 0.16, 0.22, 0.20, 0.20]
   let r = Math.random(), cum = 0, idx = 0
   for (let i = 0; i < weights.length; i++) {
     cum += weights[i]

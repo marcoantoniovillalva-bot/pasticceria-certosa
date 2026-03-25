@@ -1,0 +1,150 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-cream: #FDFEFC;
+  --color-rosso: #B20D02;
+  --color-ardesia: #222C35;
+  --color-gold: #C9982A;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-cream);
+  color: var(--color-ardesia);
+  font-family: var(--font-sans), sans-serif;
+  overflow-x: hidden;
+}
+
+/* ─── Keyframes (must be here, not just in tailwind.config) ─── */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse-soft {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* ─── Hero animations ─── */
+.hero-enter {
+  animation: fadeUp 0.9s ease-out both;
+}
+.hero-enter-delay-1 { animation: fadeUp 0.9s ease-out 0.25s both; }
+.hero-enter-delay-2 { animation: fadeUp 0.9s ease-out 0.5s both; }
+.hero-enter-delay-3 { animation: fadeUp 0.9s ease-out 0.75s both; }
+.hero-enter-delay-4 { animation: fadeUp 0.9s ease-out 1s both; }
+.hero-enter-delay-5 { animation: fadeIn 0.9s ease-out 1.2s both; }
+
+/* ─── Scroll reveal ─── */
+.reveal {
+  opacity: 0;
+  transform: translateY(32px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal-left.visible { opacity: 1; transform: translateX(0); }
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(40px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+.reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+/* Delay utilities */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* ─── Gold accent ─── */
+.text-gold  { color: var(--color-gold); }
+.bg-gold    { background-color: var(--color-gold); }
+.border-gold { border-color: var(--color-gold); }
+
+.gold-shimmer {
+  background: linear-gradient(90deg, #C9982A 0%, #E8C060 40%, #C9982A 60%, #A07820 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* ─── Nav link underline ─── */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-gold);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ─── Clip-path section dividers ─── */
+.clip-bottom {
+  clip-path: polygon(0 0, 100% 0, 100% 92%, 0 100%);
+}
+.clip-top {
+  clip-path: polygon(0 4%, 100% 0, 100% 100%, 0 100%);
+  margin-top: -4vw;
+}
+
+/* ─── Card hover lift ─── */
+.card-lift {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(34,44,53,0.15);
+}
+
+/* ─── Pulsing badge ─── */
+.pulse-badge::before {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: inherit;
+  background: rgba(201,152,42,0.3);
+  animation: pulse-soft 2s ease-in-out infinite;
+  z-index: -1;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-ardesia); }
+::-webkit-scrollbar-thumb { background: var(--color-gold); border-radius: 3px; }

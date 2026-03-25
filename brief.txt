@@ -1,0 +1,99 @@
+# BRIEF CLIENTE
+# Compila quello che sai, lascia vuoto il resto
+# Claude leggerà questo file automaticamente
+
+# --- BUSINESS ---
+Nome:Pasticceria Certosa
+Settore:Pasticceria Panificio Caffetteria Pizzeria
+Descrizione:Roberto vi accoglie con il sorriso, pronto a deliziarvi con un buon caffè, farvi assaggiare un pasticcino irresistibile,
+preparare il vostro pane croccante preferito e consigliarvi la pizza perfetta per una serata davvero speciale…
+Indirizzo:Via Volta 4, Certosa di Pavia, Italy, 27012
+Cellulare:348 672 2438
+Telefono:0382 1472 728
+Email:robivetri64@gmail.com
+Partita IVA:
+Orario: 
+lunes	    5:30–14:00 
+martes	    5:30–14:00, 15:30–20:00
+miércoles   5:30–14:00, 15:30–21:00
+jueves	    5:30–14:00, 15:30–21:00
+viernes	    5:30–14:00, 15:30–21:00
+sábado	    5:30–14:00, 15:30–21:00
+domingo	    5:30–14:00
+
+
+# --- ONLINE ---
+Sito attuale:
+Google Business:https://share.google/6YEpDPXKFmJpOiou7
+Instagram:
+Facebook:https://www.facebook.com/Deliziedellacertora
+LinkedIn:
+YouTube:
+TikTok:
+WhatsApp Business:wa.link/8kwj8i
+
+# --- BRAND ---
+Colori: #FDFEFC #B20D02 #222C35  (puoi usare anche altri colori ma l'importante è che si abbinino a questi colori principali)
+Font: stile script / calligrafico e sans-serif condensato, tutto maiuscolo 
+Stile: pulito ma moderno con amimazioni svg e micro animazioni css/ui, scroll animation, paralax leggero, video backgroud sezione hero, lottie animation, transazioni di pagina motion sulle immagini
+Tono di voce: accogliente, famigliare e tradizionale
+
+# --- CONTENUTI ---
+Tagline:
+CTA principale: (es. Prenota ora, Richiedi preventivo, Acquista)
+Servizi/Prodotti principali:
+Target cliente ideale:
+USP (cosa li differenzia): prodotti tipici siciliani al nord (panzerotti, cannoli e cassate) 600 metri quadrati di cortile per eventi all'aperto e spedizioni in zona.
+
+# --- RECENSIONI (copia/incolla le migliori) ---
+Recensione 1: "" — Nome
+Recensione 2: "" — Nome
+Recensione 3: "" — Nome
+Rating Google: stelle / N recensioni
+
+# --- OBIETTIVO PROGETTO ---
+Obiettivo: trasformare chi entra nel sito in persona che viene di presenza o ordina
+Timeline:
+Budget servizi terzi:
+Gestione autonoma contenuti: no
+
+# --- INTEGRAZIONI NECESSARIE ---
+Google Maps sul sito: sì
+Pagamenti online: no
+Email marketing: no
+Sistema prenotazioni:no
+Chat sul sito: bottone flottante di whataspp (usa il link: wa.link/8kwj8i)
+Feed Instagram:no
+Google Analytics: sì
+
+# --- NOTE LIBERE ---
+Il sito è solo in lingua italiana e gestisci le politiche relaite ai cockie e alla privacy d'accordo con la egge italiana. queste sono alcune recensioni valide:
+
+Progetto Senila:
+"Abbiamo avuto l'appoggio di fornitori davvero capaci che per primi hanno compreso la particolarità e l'importanza del progetto lavorando a condizioni davvero speciali!
+Grazie a Roberto Vetri di Delizie della Certosa che ha realizzato la torta"
+(foto di riferimento  della torta la trovi nella cartella del progetto si chiama "torta senila" e la foto profilo della persona che recensice la trovi nominata "progetto senila")
+
+Dany Montalbano:
+"Cercavo da mesi una buona pizza a domicilio a Certosa di Pavia.. FINALMENTE pizze farcitissime, qualità, puntualità e prezzo TUTTO AL TOP! Complimenti 🥳"
+(foto di riferimento  della pizza la trovi nella cartella del progetto si chiama "pizza montalbano" e la foto profilo della persona che recensice la trovi nominata "dany montalbano")
+
+Nicoletta: 
+"Come sempre le vostre torte non deludono mai,bellissima  e super buona.complimenti"
+(foto di riferimento  della torta la trovi nella cartella del progetto si chiama "torta nicoletta" e la foto profilo della persona che recensice la trovi nominata "nicoletta")
+
+Fabio Fiumefreddo: 
+"In occasione della laurea di una mia carissima amica ho potuto mangiare una torta anche bellissima da vedere. Buonissima e fresca. Doppio pan di Spagna con crema pasticcera e gocce di cioccolato, guarnita con panna montata. Una vera goduria per le papille gustative! Ordinerò anch'io una bella torta per il mio compleanno! Consiglio vivamente!"
+(foto di riferimento  della torta la trovi nella cartella del progetto e si chiama "torta fabio")
+
+Non so se puo servire per indicizzare e posizionare meglio seo i seguenti link dove ci sono numerose recenzioni positive della pasticceria (comunque decidi tu se farle vedere oppure no e come migliorare l'indicizzazione seo con questi link): 
+https://restaurantguru.it/Delizie-della-Certosa-Certosa-di-Pavia/reviews
+https://restaurantguru.it/Delizie-della-Certosa-Certosa-di-Pavia/reviews
+https://www.tripadvisor.it/Restaurant_Review-g1238536-d17605838-Reviews-Delizie_della_Certosa-Certosa_di_Pavia_Province_of_Pavia_Lombardy.html
+
+
+ci sono foto nella cartella del progetto che iniziano con "torta galleria" e finiscono con dei numeri, queste foto sono foto di torte e pasticcini usale dove consideri meglio usarle.
+ le foto "menu 1" e "menu 2" ti serviranno per capire i diversi prodotti del locale e questo ti servirà per capire come strutturare il sito web e se ritieni che hai bisogno di generare foto per descrivere le diverse sezioni con una immagine visiva puoi farlo, le immagini relative ai prodotti devono essere professionali ma sembrare realistiche comunque hai a disposizione le foto "pizza" e "salati" i nomi delle foto ti fanno capire dove usarli se ritieni necessario usarli.
+Per quanto riguarda il logo hai la foto "logo (da usare con sfondo dark)" che come dice il nome serve nel caso in cui il logo si trova in uno sfondo scuro e l'ideale e che sia cosi, perche non ho altre versioni di logo a meno che decidi di farle tu ma devono essere fedeli a quella originale comunque se decidi di no allora va bene come sfondo il colore #222C35
+Per quanto riguarda il gif che andrà dietro la sezione hero puoi usare questo "gif versione desktop" per la versione desktop e questo "gif versione mobile" per la versione mobile, 
+assicurati che le scritte della hero si vedano bene le scritte e che non siano opacate dal gif. Per quanto riguarda l'ottimizzazione seo puoi aiutarti anche dal documento "SEO-Report-Delizie-della-Certosa.md" che si trova nella stessa cartella del progetto C:\Users\Villalva\Desktop\Marketizzati definitifo\Pasticceria Certosa   

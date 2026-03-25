@@ -21,6 +21,28 @@ body {
   overflow-x: hidden;
 }
 
+/* ─── Ken Burns (hero gallery) ─── */
+@keyframes kenBurns1 {
+  from { transform: scale(1)    translate(0, 0); }
+  to   { transform: scale(1.10) translate(1.5%, 0.8%); }
+}
+@keyframes kenBurns2 {
+  from { transform: scale(1)    translate(0, 0); }
+  to   { transform: scale(1.10) translate(-1.5%, 0.8%); }
+}
+@keyframes kenBurns3 {
+  from { transform: scale(1)    translate(0, 0); }
+  to   { transform: scale(1.10) translate(0.5%, -1%); }
+}
+.kb-1 { animation: kenBurns1 9s ease-out forwards; }
+.kb-2 { animation: kenBurns2 9s ease-out forwards; }
+.kb-3 { animation: kenBurns3 9s ease-out forwards; }
+
+/* ─── Hero text shadow ─── */
+.hero-text-shadow * {
+  text-shadow: 0 2px 20px rgba(0,0,0,0.80), 0 1px 5px rgba(0,0,0,0.70);
+}
+
 /* ─── Keyframes (must be here, not just in tailwind.config) ─── */
 @keyframes fadeIn {
   from { opacity: 0; }

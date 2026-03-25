@@ -3,6 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import ScrollReveal from '@/components/ScrollReveal'
 import GallerySlider from '@/components/GallerySlider'
+import HeroSlider from '@/components/HeroSlider'
 
 export const metadata: Metadata = {
   title: 'Delizie della Certosa — Pasticceria, Pizzeria e Panificio a Certosa di Pavia',
@@ -126,37 +127,19 @@ export default function HomePage() {
       ══════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-        {/* Video background (converted from GIF — desktop 5.8MB, mobile 4MB) */}
+        {/* Auto-sliding gallery with Ken Burns */}
         <div className="absolute inset-0 z-0">
-          {/* Desktop */}
-          <video
-            aria-hidden="true"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="hidden md:block w-full h-full object-cover"
-          >
-            <source src="/images/hero-desktop.mp4" type="video/mp4" />
-          </video>
-          {/* Mobile */}
-          <video
-            aria-hidden="true"
-            autoPlay
-            loop
-            muted
-            playsInline
-            className="block md:hidden w-full h-full object-cover"
-          >
-            <source src="/images/hero-mobile.mp4" type="video/mp4" />
-          </video>
-          {/* Overlay multi-layer */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#222C35]/55 via-[#222C35]/60 to-[#222C35]/85" />
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(34,44,53,0.5)_100%)]" />
+          <HeroSlider />
+          {/* Overlay 1: rosso brand in alto — calore + identità */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#B20D02]/50 via-transparent to-transparent pointer-events-none" />
+          {/* Overlay 2: scuro in basso — leggibilità testo e bottoni */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
+          {/* Overlay 3: vignetta bordi — profondità */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(0,0,0,0.30)_100%)] pointer-events-none" />
         </div>
 
-        {/* Content — uses CSS classes with defined keyframes (not inline style) */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
+        {/* Content */}
+        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto hero-text-shadow">
 
           <p className="hero-enter font-script text-[#C9982A] text-2xl md:text-5xl mb-4 drop-shadow-lg">
             Benvenuti da

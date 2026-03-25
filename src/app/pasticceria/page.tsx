@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 export default function PasticceriaPage() {
   return (
     <main>
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-[#222C35] overflow-hidden pt-20">
-        <div className="absolute inset-0 opacity-25">
-          <Image src="/images/salati.webp" alt="" fill className="object-cover" priority />
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-black overflow-hidden pt-20">
+        <div className="absolute inset-0">
+          <Image src="/images/gallery/torta-11.webp" alt="" fill className="object-cover" priority />
         </div>
-        <div className="absolute inset-0 bg-[#222C35]/70" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
           <p className="font-script text-[#C9982A] text-3xl mb-3">Dalle 5:30 ogni giorno</p>
           <h1 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-5xl md:text-7xl mb-4">

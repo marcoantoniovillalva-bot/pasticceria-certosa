@@ -21,11 +21,11 @@ export default function CateringPage() {
   return (
     <main>
       {/* HERO */}
-      <section className="relative min-h-[70vh] flex items-center justify-center bg-[#222C35] pt-20 overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
+      <section className="relative min-h-[70vh] flex items-center justify-center bg-black pt-20 overflow-hidden">
+        <div className="absolute inset-0">
           <Image src="/images/eventi-speciali.jpg" alt="" fill className="object-cover" priority />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-b from-[#222C35]/60 to-[#222C35]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-black/55 to-black/80" />
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
           <p className="font-script text-[#C9982A] text-3xl mb-3">Il tuo evento da sogno</p>
           <h1 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-5xl md:text-7xl mb-4">
@@ -88,12 +88,12 @@ export default function CateringPage() {
       </section>
 
       {/* INCLUDE */}
-      <section className="py-14 md:py-24 bg-[#222C35]">
+      <section className="py-14 md:py-24 bg-[#F7F1E8]">
         <div className="max-w-5xl mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
               <p className="font-script text-[#C9982A] text-3xl mb-2">Tutto incluso</p>
-              <h2 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-4xl mb-4">
+              <h2 className="font-sans font-bold tracking-widest uppercase text-[#222C35] text-4xl mb-4">
                 Cosa Comprende
               </h2>
               <div className="w-16 h-0.5 bg-[#C9982A] mx-auto rounded-full" />
@@ -110,9 +110,9 @@ export default function CateringPage() {
               '✓ Menù concordato in anticipo',
               '✓ Possibilità di catering esterno con solo affitto spazio',
             ].map((item) => (
-              <div key={item} className="flex items-start gap-3 py-3 border-b border-[#FDFEFC]/10 last:border-0">
+              <div key={item} className="flex items-start gap-3 py-3 border-b border-[#222C35]/10 last:border-0">
                 <span className="text-[#C9982A] font-bold mt-0.5">✓</span>
-                <p className="text-[#FDFEFC]/70 text-sm">{item.replace('✓ ', '')}</p>
+                <p className="text-[#222C35]/70 text-sm">{item.replace('✓ ', '')}</p>
               </div>
             ))}
           </div>

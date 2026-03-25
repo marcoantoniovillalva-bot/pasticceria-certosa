@@ -44,7 +44,7 @@ export default function PizzaPage() {
       <section className="relative min-h-[70vh] flex items-center justify-center overflow-hidden pt-20">
         <div className="absolute inset-0">
           <Image src="/images/pizza.webp" alt="Pizza a domicilio Certosa di Pavia" fill className="object-cover" priority />
-          <div className="absolute inset-0 bg-[#222C35]/70" />
+          <div className="absolute inset-0 bg-black/60" />
         </div>
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
           <p className="font-script text-[#C9982A] text-3xl mb-3">Consegna a domicilio</p>
@@ -175,7 +175,7 @@ export default function PizzaPage() {
       </section>
 
       {/* RECENSIONE */}
-      <section className="py-14 md:py-24 bg-[#222C35]">
+      <section className="py-14 md:py-24 bg-[#F7F1E8]">
         <div className="max-w-4xl mx-auto px-4">
           <ScrollReveal>
             <div className="flex flex-col md:flex-row gap-10 items-center">
@@ -195,7 +195,7 @@ export default function PizzaPage() {
                     </svg>
                   ))}
                 </div>
-                <blockquote className="text-[#FDFEFC] text-xl md:text-2xl italic leading-relaxed mb-4">
+                <blockquote className="text-[#222C35] text-xl md:text-2xl italic leading-relaxed mb-4">
                   &ldquo;Cercavo da mesi una buona pizza a domicilio a Certosa di Pavia..
                   FINALMENTE pizze farcitissime, qualità, puntualità e prezzo TUTTO AL TOP! Complimenti&rdquo;
                 </blockquote>
@@ -207,7 +207,7 @@ export default function PizzaPage() {
                     height={40}
                     className="rounded-full w-10 h-10 object-cover"
                   />
-                  <p className="text-[#FDFEFC]/70 font-sans font-bold tracking-widest uppercase text-sm">
+                  <p className="text-[#222C35]/60 font-sans font-bold tracking-widest uppercase text-sm">
                     Dany Montalbano · Cliente verificato
                   </p>
                 </div>

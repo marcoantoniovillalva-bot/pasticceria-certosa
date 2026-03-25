@@ -253,7 +253,7 @@ export default function HomePage() {
               href="https://wa.link/8kwj8i"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-[#222C35] text-[#FDFEFC] px-7 py-3.5 rounded-full font-sans font-bold tracking-widest uppercase text-xs hover:bg-[#B20D02] transition-all duration-300"
+              className="inline-flex items-center gap-2 bg-[#B20D02] text-[#FDFEFC] px-7 py-3.5 rounded-full font-sans font-bold tracking-widest uppercase text-xs hover:bg-[#B20D02]/90 transition-all duration-300"
             >
               Contattaci
               <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -290,15 +290,12 @@ export default function HomePage() {
       {/* ══════════════════════════════════════
           SERVIZI
       ══════════════════════════════════════ */}
-      <section className="py-14 md:py-28 bg-[#222C35] relative overflow-hidden">
-        {/* Subtle pattern overlay */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #FDFEFC 0, #FDFEFC 1px, transparent 0, transparent 50%)', backgroundSize: '20px 20px' }} />
-
+      <section className="py-14 md:py-28 bg-[#F7F1E8] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <ScrollReveal>
             <div className="text-center mb-16">
               <p className="font-script text-[#C9982A] text-3xl mb-2">Cosa offriamo</p>
-              <h2 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-3xl md:text-5xl mb-5">
+              <h2 className="font-sans font-bold tracking-widest uppercase text-[#222C35] text-3xl md:text-5xl mb-5">
                 I Nostri Servizi
               </h2>
               <div className="flex items-center justify-center gap-4">
@@ -314,7 +311,7 @@ export default function HomePage() {
               <ScrollReveal key={s.href} delay={i * 70}>
                 <Link
                   href={s.href}
-                  className="group relative overflow-hidden block bg-[#FDFEFC]/4 border border-[#FDFEFC]/8 rounded-2xl hover:border-[#C9982A]/50 card-lift transition-all duration-400"
+                  className="group relative overflow-hidden block bg-white border border-[#222C35]/8 rounded-2xl hover:border-[#C9982A]/50 card-lift transition-all duration-400 shadow-sm"
                 >
                   <div className="relative h-52 overflow-hidden">
                     <Image
@@ -324,17 +321,17 @@ export default function HomePage() {
                       sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                       className="object-cover transition-transform duration-600 group-hover:scale-110"
                     />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#222C35] via-[#222C35]/30 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
                     {/* Gold icon bg */}
                     <div className="absolute top-3 left-3 bg-[#C9982A]/20 backdrop-blur-sm border border-[#C9982A]/30 w-9 h-9 rounded-xl flex items-center justify-center text-lg">
                       {s.icon}
                     </div>
                   </div>
                   <div className="p-6">
-                    <h3 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-base mb-2 group-hover:text-[#C9982A] transition-colors">
+                    <h3 className="font-sans font-bold tracking-widest uppercase text-[#222C35] text-base mb-2 group-hover:text-[#C9982A] transition-colors">
                       {s.title}
                     </h3>
-                    <p className="text-[#FDFEFC]/50 text-sm leading-relaxed mb-4">{s.desc}</p>
+                    <p className="text-[#222C35]/55 text-sm leading-relaxed mb-4">{s.desc}</p>
                     <span className="inline-flex items-center gap-1 text-[#C9982A] text-xs font-sans font-semibold tracking-widest uppercase group-hover:gap-2 transition-all">
                       Scopri di più
                       <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -432,14 +429,12 @@ export default function HomePage() {
       {/* ══════════════════════════════════════
           RECENSIONI
       ══════════════════════════════════════ */}
-      <section className="py-14 md:py-28 bg-[#222C35] relative overflow-hidden">
-        <div className="absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'repeating-linear-gradient(45deg, #FDFEFC 0, #FDFEFC 1px, transparent 0, transparent 50%)', backgroundSize: '20px 20px' }} />
-
+      <section className="py-14 md:py-28 bg-[#FDFEFC] relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 relative z-10">
           <ScrollReveal>
             <div className="text-center mb-16">
               <p className="font-script text-[#C9982A] text-3xl mb-2">Cosa dicono di noi</p>
-              <h2 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-3xl md:text-5xl mb-5">
+              <h2 className="font-sans font-bold tracking-widest uppercase text-[#222C35] text-3xl md:text-5xl mb-5">
                 Recensioni Reali
               </h2>
               <div className="flex items-center justify-center gap-4 mb-4">
@@ -449,8 +444,8 @@ export default function HomePage() {
               </div>
               <div className="flex items-center justify-center gap-3 mt-4">
                 <Stars count={5} />
-                <span className="text-[#FDFEFC] font-sans font-bold text-2xl">4.7</span>
-                <span className="text-[#FDFEFC]/40 text-sm">su 112 recensioni Google</span>
+                <span className="text-[#222C35] font-sans font-bold text-2xl">4.7</span>
+                <span className="text-[#222C35]/40 text-sm">su 112 recensioni Google</span>
               </div>
             </div>
           </ScrollReveal>
@@ -459,9 +454,9 @@ export default function HomePage() {
           <div className="flex overflow-x-auto gap-4 pb-4 px-4 snap-x snap-mandatory md:grid md:grid-cols-2 md:gap-5 md:overflow-visible md:pb-0 md:px-0">
             {reviews.map((r, i) => (
               <ScrollReveal key={r.name} delay={i * 90}>
-                <div className="min-w-[320px] md:min-w-0 snap-start bg-[#FDFEFC]/4 border border-[#FDFEFC]/8 rounded-2xl hover:border-[#C9982A]/30 p-6 flex gap-4 transition-all duration-300 card-lift">
+                <div className="min-w-[320px] md:min-w-0 snap-start bg-white border border-[#222C35]/8 rounded-2xl hover:border-[#C9982A]/30 p-6 flex gap-4 transition-all duration-300 card-lift shadow-sm">
                   {r.product && (
-                    <div className="relative w-24 h-24 shrink-0 overflow-hidden rounded-xl border border-[#FDFEFC]/10">
+                    <div className="relative w-24 h-24 shrink-0 overflow-hidden rounded-xl border border-[#222C35]/10">
                       <Image
                         src={r.product}
                         alt={`${r.name} - Delizie della Certosa`}
@@ -482,16 +477,16 @@ export default function HomePage() {
                           className="rounded-full w-10 h-10 object-cover border border-[#C9982A]/30"
                         />
                       ) : (
-                        <div className="w-10 h-10 rounded-full bg-[#B20D02]/20 border border-[#B20D02]/30 flex items-center justify-center text-[#B20D02] font-sans font-bold text-sm shrink-0">
+                        <div className="w-10 h-10 rounded-full bg-[#B20D02]/10 border border-[#B20D02]/20 flex items-center justify-center text-[#B20D02] font-sans font-bold text-sm shrink-0">
                           {r.name[0]}
                         </div>
                       )}
                       <div>
-                        <p className="text-[#FDFEFC] font-sans font-bold text-sm tracking-wider">{r.name}</p>
+                        <p className="text-[#222C35] font-sans font-bold text-sm tracking-wider">{r.name}</p>
                         <Stars count={r.stars} />
                       </div>
                     </div>
-                    <p className="text-[#FDFEFC]/60 text-sm leading-relaxed italic">&ldquo;{r.text}&rdquo;</p>
+                    <p className="text-[#222C35]/60 text-sm leading-relaxed italic">&ldquo;{r.text}&rdquo;</p>
                   </div>
                 </div>
               </ScrollReveal>
@@ -505,7 +500,7 @@ export default function HomePage() {
                 href="https://restaurantguru.it/Delizie-della-Certosa-Certosa-di-Pavia/reviews"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#FDFEFC]/40 hover:text-[#C9982A] text-xs font-sans tracking-widest uppercase transition-colors"
+                className="text-[#222C35]/40 hover:text-[#C9982A] text-xs font-sans tracking-widest uppercase transition-colors"
               >
                 Restaurant Guru →
               </a>
@@ -513,7 +508,7 @@ export default function HomePage() {
                 href="https://www.tripadvisor.it/Restaurant_Review-g1238536-d17605838-Reviews-Delizie_della_Certosa-Certosa_di_Pavia_Province_of_Pavia_Lombardy.html"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#FDFEFC]/40 hover:text-[#C9982A] text-xs font-sans tracking-widest uppercase transition-colors"
+                className="text-[#222C35]/40 hover:text-[#C9982A] text-xs font-sans tracking-widest uppercase transition-colors"
               >
                 TripAdvisor →
               </a>
@@ -529,17 +524,17 @@ export default function HomePage() {
         <div className="max-w-6xl mx-auto px-4">
           {/* Text block */}
           <ScrollReveal>
-            <div className="bg-[#222C35] rounded-2xl p-8 md:p-10 relative overflow-hidden mb-10">
+            <div className="bg-[#F7F1E8] border border-[#C9982A]/20 rounded-2xl p-8 md:p-10 relative overflow-hidden mb-10">
               {/* Gold corner */}
               <div className="absolute top-0 right-0 w-0 h-0 border-t-[40px] border-r-[40px] border-t-[#C9982A] border-r-transparent" />
               <div className="md:grid md:grid-cols-2 md:gap-10 md:items-center">
                 <div>
                   <p className="font-script text-[#C9982A] text-3xl mb-3">Il tuo evento, il nostro spazio</p>
-                  <h2 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-3xl md:text-4xl mb-6">
+                  <h2 className="font-sans font-bold tracking-widest uppercase text-[#222C35] text-3xl md:text-4xl mb-6">
                     Cortile da 600m²
                   </h2>
                   <div className="w-12 h-0.5 bg-[#C9982A] mb-6 rounded-full" />
-                  <p className="text-[#FDFEFC]/65 leading-relaxed mb-6 text-[15px]">
+                  <p className="text-[#222C35]/65 leading-relaxed mb-6 text-[15px]">
                     Un cortile esclusivo da 600 metri quadrati per i tuoi eventi all&apos;aperto.
                     Matrimoni, cerimonie, compleanni, cene aziendali — noi pensiamo a tutto.
                   </p>
@@ -552,7 +547,7 @@ export default function HomePage() {
                       'Dolci e pasticcini siciliani',
                       'Capacità fino a 150 persone',
                     ].map((item) => (
-                      <li key={item} className="flex items-center gap-3 text-[#FDFEFC]/65 text-sm">
+                      <li key={item} className="flex items-center gap-3 text-[#222C35]/65 text-sm">
                         <div className="w-1.5 h-1.5 bg-[#C9982A] rotate-45 shrink-0" />
                         {item}
                       </li>
@@ -579,12 +574,12 @@ export default function HomePage() {
       {/* ══════════════════════════════════════
           DOVE SIAMO
       ══════════════════════════════════════ */}
-      <section className="py-14 md:py-28 bg-[#222C35]" id="dove-siamo">
+      <section className="py-14 md:py-28 bg-[#F7F1E8]" id="dove-siamo">
         <div className="max-w-7xl mx-auto px-4">
           <ScrollReveal>
             <div className="text-center mb-16">
               <p className="font-script text-[#C9982A] text-3xl mb-2">Vieni a trovarci</p>
-              <h2 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-3xl md:text-5xl mb-5">
+              <h2 className="font-sans font-bold tracking-widest uppercase text-[#222C35] text-3xl md:text-5xl mb-5">
                 Dove Siamo
               </h2>
               <div className="flex items-center justify-center gap-4">
@@ -597,13 +592,13 @@ export default function HomePage() {
 
           <div className="grid md:grid-cols-2 gap-8 md:gap-10 items-start">
             <ScrollReveal direction="left">
-              <div className="w-full h-80 md:h-[400px] overflow-hidden border border-[#FDFEFC]/10">
+              <div className="w-full h-80 md:h-[400px] overflow-hidden rounded-2xl border border-[#222C35]/10">
                 <iframe
                   title="Delizie della Certosa - Via Volta 4, Certosa di Pavia"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2799.8!2d9.1456!3d45.2564!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sVia+Volta+4%2C+27012+Certosa+di+Pavia+PV!5e0!3m2!1sit!2sit!4v1"
                   width="100%"
                   height="100%"
-                  style={{ border: 0, filter: 'grayscale(0.3) invert(0.05)' }}
+                  style={{ border: 0 }}
                   allowFullScreen
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
@@ -622,8 +617,8 @@ export default function HomePage() {
             <ScrollReveal direction="right" delay={100}>
               <div className="space-y-5">
                 <div>
-                  <h3 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC]/50 text-[10px] mb-3">Indirizzo</h3>
-                  <p className="text-[#FDFEFC]/60 text-sm">Via Volta 4<br />27012 Certosa di Pavia (PV)</p>
+                  <h3 className="font-sans font-bold tracking-widest uppercase text-[#222C35]/50 text-[10px] mb-3">Indirizzo</h3>
+                  <p className="text-[#222C35]/70 text-sm">Via Volta 4<br />27012 Certosa di Pavia (PV)</p>
                 </div>
               </div>
             </ScrollReveal>

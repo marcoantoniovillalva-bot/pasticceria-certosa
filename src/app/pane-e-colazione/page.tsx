@@ -12,11 +12,11 @@ export const metadata: Metadata = {
 export default function PanePage() {
   return (
     <main>
-      <section className="relative min-h-[60vh] flex items-center justify-center bg-[#222C35] pt-20">
-        <div className="absolute inset-0 opacity-20">
+      <section className="relative min-h-[60vh] flex items-center justify-center bg-black pt-20">
+        <div className="absolute inset-0">
           <Image src="/images/pane.jpg" alt="" fill className="object-cover" priority />
         </div>
-        <div className="absolute inset-0 bg-[#222C35]/70" />
+        <div className="absolute inset-0 bg-black/55" />
         <div className="relative z-10 text-center px-4 max-w-3xl mx-auto">
           <p className="font-script text-[#C9982A] text-3xl mb-3">Fresco ogni mattina</p>
           <h1 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-5xl md:text-7xl mb-4">
@@ -60,16 +60,16 @@ export default function PanePage() {
         </div>
       </section>
 
-      <section className="py-20 bg-[#222C35] text-center">
+      <section className="py-20 bg-[#B20D02] text-center">
         <ScrollReveal>
-          <p className="font-script text-[#C9982A] text-3xl mb-3">Il tuo panificio di fiducia</p>
+          <p className="font-script text-[#FDFEFC]/80 text-3xl mb-3">Il tuo panificio di fiducia</p>
           <h2 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-3xl mb-6">
             Via Volta 4, Certosa di Pavia
           </h2>
-          <p className="text-[#FDFEFC]/60 mb-8">Apriamo alle <strong className="text-[#FDFEFC]">5:30</strong> — ogni giorno.</p>
+          <p className="text-[#FDFEFC]/75 mb-8">Apriamo alle <strong className="text-[#FDFEFC]">5:30</strong> — ogni giorno.</p>
           <a
             href="tel:+390382147278"
-            className="inline-flex items-center justify-center bg-[#B20D02] text-[#FDFEFC] px-8 py-4 rounded-full font-sans font-bold tracking-widest uppercase text-sm hover:bg-[#B20D02]/90 transition-colors"
+            className="inline-flex items-center justify-center bg-[#FDFEFC] text-[#B20D02] px-8 py-4 rounded-full font-sans font-bold tracking-widest uppercase text-sm hover:bg-[#FDFEFC]/90 transition-colors"
           >
             Chiama: 0382 1472 728
           </a>

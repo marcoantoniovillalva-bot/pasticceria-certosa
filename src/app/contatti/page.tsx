@@ -11,9 +11,9 @@ export const metadata: Metadata = {
 export default function ContattiPage() {
   return (
     <main className="pt-20">
-      <section className="bg-[#222C35] py-12 md:py-20 text-center">
-        <p className="font-script text-[#B20D02] text-3xl mb-3">Vieni a trovarci</p>
-        <h1 className="font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-5xl md:text-6xl mb-4">
+      <section className="bg-[#F7F1E8] py-12 md:py-20 text-center">
+        <p className="font-script text-[#C9982A] text-3xl mb-3">Vieni a trovarci</p>
+        <h1 className="font-sans font-bold tracking-widest uppercase text-[#222C35] text-5xl md:text-6xl mb-4">
           Contatti
         </h1>
         <div className="w-16 h-0.5 bg-[#B20D02] mx-auto rounded-full" />

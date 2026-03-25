@@ -1,4 +1,4 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { Great_Vibes, Barlow_Condensed } from 'next/font/google'
 import './globals.css'
 import Navbar from '@/components/Navbar'
@@ -20,6 +20,10 @@ const sans = Barlow_Condensed({
   variable: '--font-sans',
   display: 'swap',
 })
+
+export const viewport: Viewport = {
+  themeColor: '#222C35',
+}
 
 export const metadata: Metadata = {
   title: 'Delizie della Certosa — Pasticceria, Pizzeria e Panificio a Certosa di Pavia',
@@ -72,7 +76,6 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true },
   },
-  themeColor: '#222C35',
   verification: {
     google: '',
   },

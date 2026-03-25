@@ -126,24 +126,31 @@ export default function HomePage() {
       ══════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-        {/* GIF background */}
-        <div className="absolute inset-0 z-0" style={{ willChange: 'auto' }}>
-          <img
-            src="/images/hero-desktop.gif"
-            alt=""
+        {/* Video background (converted from GIF — desktop 5.8MB, mobile 4MB) */}
+        <div className="absolute inset-0 z-0">
+          {/* Desktop */}
+          <video
             aria-hidden="true"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="hidden md:block w-full h-full object-cover"
-            loading="eager"
-          />
-          <img
-            src="/images/hero-mobile.gif"
-            alt=""
+          >
+            <source src="/images/hero-desktop.mp4" type="video/mp4" />
+          </video>
+          {/* Mobile */}
+          <video
             aria-hidden="true"
+            autoPlay
+            loop
+            muted
+            playsInline
             className="block md:hidden w-full h-full object-cover"
-            loading="eager"
-            style={{ transform: 'translateZ(0)' }}
-          />
-          {/* Overlay multi-layer: più scuro in basso + vignetta */}
+          >
+            <source src="/images/hero-mobile.mp4" type="video/mp4" />
+          </video>
+          {/* Overlay multi-layer */}
           <div className="absolute inset-0 bg-gradient-to-b from-[#222C35]/55 via-[#222C35]/60 to-[#222C35]/85" />
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,rgba(34,44,53,0.5)_100%)]" />
         </div>

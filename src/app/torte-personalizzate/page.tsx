@@ -142,12 +142,12 @@ export default function TortePersonalizzatePage() {
         </section>
 
         {/* COME ORDINARE */}
-        <section className="py-14 md:py-24 bg-ardesia">
+        <section className="py-14 md:py-24 bg-[#F7F1E8]">
           <div className="max-w-6xl mx-auto px-4">
             <ScrollReveal>
               <div className="text-center mb-16">
                 <p className="font-script text-[#C9982A] text-3xl mb-2">Semplice e veloce</p>
-                <h2 className="font-sans font-700 tracking-widest uppercase text-cream text-4xl md:text-5xl mb-4">
+                <h2 className="font-sans font-700 tracking-widest uppercase text-[#222C35] text-4xl md:text-5xl mb-4">
                   Come Ordinare
                 </h2>
                 <div className="w-16 h-0.5 bg-[#C9982A] mx-auto rounded-full" />
@@ -157,12 +157,12 @@ export default function TortePersonalizzatePage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-8">
               {steps.map((step, i) => (
                 <ScrollReveal key={step.num} delay={i * 120}>
-                  <div className="border border-cream/10 p-8 rounded-2xl text-center hover:border-[#C9982A]/40 transition-colors">
+                  <div className="bg-white border border-[#222C35]/8 p-8 rounded-2xl text-center hover:border-[#C9982A]/40 transition-colors shadow-sm">
                     <p className="font-sans font-700 text-[#C9982A] text-5xl mb-6 leading-none">{step.num}</p>
-                    <h3 className="font-sans font-700 tracking-widest uppercase text-cream text-lg mb-4">
+                    <h3 className="font-sans font-700 tracking-widest uppercase text-[#222C35] text-lg mb-4">
                       {step.title}
                     </h3>
-                    <p className="text-cream/60 text-sm leading-relaxed">{step.desc}</p>
+                    <p className="text-[#222C35]/60 text-sm leading-relaxed">{step.desc}</p>
                   </div>
                 </ScrollReveal>
               ))}

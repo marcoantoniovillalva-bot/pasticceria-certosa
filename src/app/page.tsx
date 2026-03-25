@@ -123,82 +123,88 @@ export default function HomePage() {
     <main>
 
       {/* ══════════════════════════════════════
-          HERO — GIF background, full screen
+          HERO — Galleria Ken Burns + card frosted glass
       ══════════════════════════════════════ */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-        {/* Auto-sliding gallery with Ken Burns */}
+        {/* Galleria scorrevole Ken Burns */}
         <div className="absolute inset-0 z-0">
           <HeroSlider />
-          {/* Overlay 1: rosso brand in alto — calore + identità */}
-          <div className="absolute inset-0 bg-gradient-to-b from-[#B20D02]/50 via-transparent to-transparent pointer-events-none" />
-          {/* Overlay 2: scuro in basso — leggibilità testo e bottoni */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent pointer-events-none" />
-          {/* Overlay 3: vignetta bordi — profondità */}
-          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,rgba(0,0,0,0.30)_100%)] pointer-events-none" />
+          {/* Overlay leggero: solo un velo rosso brand in alto */}
+          <div className="absolute inset-0 bg-gradient-to-b from-[#B20D02]/30 via-transparent to-transparent pointer-events-none" />
+          {/* Vignetta bordi molto sottile */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_50%,rgba(0,0,0,0.20)_100%)] pointer-events-none" />
         </div>
 
-        {/* Content */}
-        <div className="relative z-10 text-center px-4 max-w-4xl mx-auto hero-text-shadow">
+        {/* ── Frosted glass card ── */}
+        <div className="relative z-10 w-full px-4 flex justify-center">
+          <div className="hero-enter w-full max-w-2xl bg-[#FDFEFC]/80 backdrop-blur-md border border-[#C9982A]/35 rounded-3xl px-7 py-10 md:px-12 md:py-14 text-center shadow-2xl shadow-black/20">
 
-          <p className="hero-enter font-script text-[#C9982A] text-2xl md:text-5xl mb-4 drop-shadow-lg">
-            Benvenuti da
-          </p>
+            {/* Gold top accent line */}
+            <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-[#C9982A] to-transparent mx-auto mb-6" />
 
-          <h1 className="hero-enter-delay-1 font-sans font-bold tracking-widest uppercase text-[#FDFEFC] text-[2.2rem] sm:text-7xl md:text-8xl leading-none mb-5 drop-shadow-2xl">
-            Delizie della Certosa
-          </h1>
+            <p className="hero-enter font-script text-[#C9982A] text-2xl md:text-4xl mb-3">
+              Benvenuti da
+            </p>
 
-          {/* Gold divider */}
-          <div className="hero-enter-delay-2 flex items-center justify-center gap-4 mb-5">
-            <div className="h-px w-16 bg-gradient-to-r from-transparent to-[#C9982A]" />
-            <div className="w-2 h-2 bg-[#C9982A] rotate-45" />
-            <div className="h-px w-16 bg-gradient-to-l from-transparent to-[#C9982A]" />
-          </div>
+            <h1 className="hero-enter-delay-1 font-sans font-bold tracking-widest uppercase text-[#222C35] text-[1.9rem] sm:text-5xl md:text-6xl leading-tight mb-5">
+              Delizie della Certosa
+            </h1>
 
-          <p className="hero-enter-delay-2 font-script text-[#FDFEFC]/90 text-2xl md:text-3xl mb-8 drop-shadow">
-            Sapori di Sicilia nel cuore della Lombardia
-          </p>
+            {/* Gold divider */}
+            <div className="hero-enter-delay-2 flex items-center justify-center gap-4 mb-5">
+              <div className="h-px w-12 bg-gradient-to-r from-transparent to-[#C9982A]" />
+              <div className="w-1.5 h-1.5 bg-[#C9982A] rotate-45" />
+              <div className="h-px w-12 bg-gradient-to-l from-transparent to-[#C9982A]" />
+            </div>
 
-          <p className="hero-enter-delay-3 text-[#FDFEFC]/70 text-base md:text-lg max-w-xl mx-auto mb-10 leading-relaxed">
-            Pasticceria artigianale · Pizzeria a domicilio · Panificio · Catering
-            <br />
-            <span className="text-sm text-[#FDFEFC]/50">Via Volta 4, Certosa di Pavia · Aperto dalle 5:30</span>
-          </p>
+            <p className="hero-enter-delay-2 font-script text-[#B20D02] text-xl md:text-2xl mb-6">
+              Sapori di Sicilia nel cuore della Lombardia
+            </p>
 
-          <div className="hero-enter-delay-4 flex flex-col sm:flex-row gap-4 justify-center">
-            <a
-              href="https://wa.link/8kwj8i"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 bg-[#B20D02] text-[#FDFEFC] px-8 py-4 rounded-full font-sans font-bold tracking-widest uppercase text-sm hover:bg-[#B20D02]/90 hover:scale-105 hover:shadow-xl hover:shadow-[#B20D02]/40 transition-all duration-300"
-            >
-              <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
-                <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.559 4.118 1.535 5.847L.057 23.882l6.188-1.623A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.366l-.36-.213-3.724.977.995-3.638-.235-.374A9.818 9.818 0 1112 21.818z" />
-              </svg>
-              Ordina su WhatsApp
-            </a>
-            <Link
-              href="/torte-personalizzate"
-              className="inline-flex items-center justify-center border-2 border-[#FDFEFC]/60 text-[#FDFEFC] px-8 py-4 rounded-full font-sans font-semibold tracking-widest uppercase text-sm hover:bg-[#FDFEFC] hover:text-[#222C35] transition-all duration-300"
-            >
-              Scopri le Torte
-            </Link>
-          </div>
+            <p className="hero-enter-delay-3 text-[#222C35]/65 text-sm md:text-base max-w-lg mx-auto mb-8 leading-relaxed">
+              Pasticceria artigianale · Pizzeria a domicilio · Panificio · Catering
+              <br />
+              <span className="text-xs text-[#222C35]/45">Via Volta 4, Certosa di Pavia · Aperto dalle 5:30</span>
+            </p>
 
-          {/* Rating badge */}
-          <div className="hero-enter-delay-5 mt-12 inline-flex items-center gap-3 bg-[#222C35]/60 backdrop-blur-sm border border-[#C9982A]/30 px-6 py-3 rounded-2xl relative">
-            <Stars count={5} />
-            <span className="text-[#FDFEFC] font-sans font-bold text-lg">4.7</span>
-            <span className="text-[#FDFEFC]/50 text-sm">· 112 recensioni Google</span>
+            <div className="hero-enter-delay-4 flex flex-col sm:flex-row gap-3 justify-center">
+              <a
+                href="https://wa.link/8kwj8i"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center justify-center gap-2 bg-[#B20D02] text-[#FDFEFC] px-7 py-3.5 rounded-full font-sans font-bold tracking-widest uppercase text-xs hover:bg-[#B20D02]/90 hover:scale-105 hover:shadow-lg hover:shadow-[#B20D02]/40 transition-all duration-300"
+              >
+                <svg className="w-4 h-4 group-hover:scale-110 transition-transform" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+                  <path d="M12 0C5.373 0 0 5.373 0 12c0 2.125.559 4.118 1.535 5.847L.057 23.882l6.188-1.623A11.944 11.944 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.003-1.366l-.36-.213-3.724.977.995-3.638-.235-.374A9.818 9.818 0 1112 21.818z" />
+                </svg>
+                Ordina su WhatsApp
+              </a>
+              <Link
+                href="/torte-personalizzate"
+                className="inline-flex items-center justify-center border-2 border-[#222C35]/30 text-[#222C35] px-7 py-3.5 rounded-full font-sans font-semibold tracking-widest uppercase text-xs hover:bg-[#222C35] hover:text-[#FDFEFC] transition-all duration-300"
+              >
+                Scopri le Torte
+              </Link>
+            </div>
+
+            {/* Rating badge */}
+            <div className="hero-enter-delay-5 mt-8 inline-flex items-center gap-3 bg-[#222C35]/6 border border-[#222C35]/12 px-5 py-2.5 rounded-xl">
+              <Stars count={5} />
+              <span className="text-[#222C35] font-sans font-bold text-base">4.7</span>
+              <span className="text-[#222C35]/45 text-xs">· 112 recensioni Google</span>
+            </div>
+
+            {/* Gold bottom accent line */}
+            <div className="w-12 h-[2px] bg-gradient-to-r from-transparent via-[#C9982A] to-transparent mx-auto mt-6" />
           </div>
         </div>
 
         {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-[#FDFEFC]/40">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-[#FDFEFC]/70">
           <span className="text-[10px] font-sans tracking-[0.3em] uppercase">Scorri</span>
-          <div className="w-px h-10 bg-gradient-to-b from-[#C9982A]/60 to-transparent" style={{ animation: 'pulse-soft 2s ease-in-out infinite' }} />
+          <div className="w-px h-10 bg-gradient-to-b from-[#C9982A]/80 to-transparent" style={{ animation: 'pulse-soft 2s ease-in-out infinite' }} />
         </div>
       </section>
 

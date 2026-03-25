@@ -80,6 +80,4 @@ tsconfig.tsbuildinfo
 /*.GIF
 /_materiali/
 
-# Large hero GIFs (>100MB — too large for GitHub, serve from CDN)
-/public/images/hero-desktop.gif
-/public/images/hero-mobile.gif
+# Hero GIFs tracked via Git LFS (see .gitattributes)

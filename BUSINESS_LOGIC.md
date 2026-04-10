@@ -1,154 +1,101 @@
-# BUSINESS_LOGIC.md - LexAgenda
+# BUSINESS_LOGIC.md — Delizie della Certosa
 
-> Generado por SaaS Factory | Fecha: 2024-12-20
+> Sito web per pasticceria, pizzeria e panificio artigianale | Certosa di Pavia (PV), Italia
 
-## 1. Problema de Negocio
+---
 
-**Dolor:** Los bufetes de abogados gestionan citas manualmente por WhatsApp/teléfono, perdiendo tiempo y clientes. No tienen visibilidad de disponibilidad, los clientes cancelan sin aviso, y no hay métricas de rendimiento.
+## 1. Problema di Business
 
-**Costo actual:**
-- ~2 horas diarias coordinando citas manualmente
-- ~20% de citas perdidas por falta de recordatorios
-- Pérdida de leads por respuesta lenta
-- Sin métricas de productividad por abogado
+**Il contesto:** Un'attività artigianale con tre anime (pasticceria, pizzeria a domicilio, panificio) e un cortile da 600m² per eventi ha bisogno di un sito che mostri tutti i servizi, generi ordini WhatsApp e si posizioni su Google per ricerche locali.
 
-## 2. Solución
+**Obiettivi:**
+- Aumentare gli ordini di pizza a domicilio e torte personalizzate
+- Posizionarsi per ricerche locali ("pasticceria Certosa di Pavia", "dolci siciliani Pavia")
+- Comunicare la storia artigianale e siciliana del brand
+- Gestire richieste di catering ed eventi (cortile 600m²)
 
-**Propuesta de valor:** Una plataforma de agendamiento de citas legales que permite a clientes reservar consultas online con abogados según su especialidad y disponibilidad.
+---
 
-**Flujo principal (Happy Path):**
-1. Cliente entra a la plataforma, selecciona tipo de consulta
-2. Sistema muestra abogados disponibles filtrados por especialidad
-3. Cliente selecciona abogado, fecha y hora disponible
-4. Sistema crea la cita y envía confirmación por email
-5. Abogado ve la cita en su dashboard
-6. Sistema envía recordatorio 24h antes
-7. Abogado marca cita como completada y agrega notas
+## 2. Soluzione
 
-## 3. Usuario Objetivo
+**Proposta di valore:** Un sito marketing con pagine dedicate per ogni categoria di prodotto/servizio, galleria con slider, elementi decorativi (canvas foglie d'oro), CTA WhatsApp per ordini diretti — ottimizzato per conversione locale e SEO.
 
-**Roles:**
-- **Admin del Bufete**: Gestiona abogados, configura horarios, ve reportes
-- **Abogado**: Gestiona su agenda personal, actualiza disponibilidad
-- **Cliente**: Agenda citas, ve historial, recibe recordatorios
+**Flusso principale:**
+1. Visitatore trova il sito su Google (es. "pizza a domicilio Certosa di Pavia")
+2. Homepage con hero visivo e griglia servizi cattura l'interesse
+3. Pagina dedicata (es. `/pizza-a-domicilio`) fornisce dettagli e prezzi
+4. CTA WhatsApp converte direttamente in ordine o richiesta di info
+5. Sezione catering/eventi mostra il cortile per eventi privati
 
-**Contexto:** Bufetes pequeños/medianos (1-20 abogados) que quieren profesionalizar su gestión de citas.
+---
 
-## 4. Arquitectura de Datos
+## 3. Servizi Offerti
 
-**Input:**
-- Datos del cliente (nombre, email, teléfono)
-- Tipo de consulta legal
-- Preferencia de abogado/especialidad
-- Fecha y hora deseada
-- Notas adicionales del cliente
+| Servizio | Pagina | Descrizione |
+|---|---|---|
+| Torte personalizzate | `/torte-personalizzate` | Compleanni, matrimoni, comunioni, lauree |
+| Dolci siciliani | `/dolci-siciliani` | Cannoli, cassate, panzerotti artigianali |
+| Pizza a domicilio | `/pizza-a-domicilio` | Consegna Certosa di Pavia e dintorni |
+| Pasticceria & Caffè | `/pasticceria` | Colazione, pasticcini, caffetteria |
+| Pane e colazione | `/pane-e-colazione` | Panificio artigianale |
+| Catering ed eventi | `/catering-ed-eventi` | Cortile 600m² per eventi privati |
+| Contatti | `/contatti` | Indirizzo, orari, WhatsApp, mappa |
 
-**Output:**
-- Confirmación de cita (email)
-- Recordatorios automáticos (24h antes)
-- Dashboard con citas del día/semana
-- Métricas y reportes
-- Historial de citas
+---
 
-**Storage (Supabase tables):**
-
-```sql
--- Ya existe
-profiles (id, email, full_name, avatar_url, created_at, updated_at)
-
--- Por crear
-lawyers (
-  id uuid primary key,
-  user_id uuid references profiles(id),
-  specialty text not null,
-  bio text,
-  experience_years int,
-  hourly_rate decimal,
-  rating decimal,
-  is_active boolean default true,
-  created_at timestamptz default now()
-)
-
-appointment_types (
-  id uuid primary key,
-  name text not null,
-  description text,
-  duration_minutes int default 60,
-  price decimal,
-  created_at timestamptz default now()
-)
-
-availability (
-  id uuid primary key,
-  lawyer_id uuid references lawyers(id),
-  day_of_week int, -- 0=domingo, 1=lunes...
-  start_time time,
-  end_time time,
-  is_available boolean default true
-)
-
-appointments (
-  id uuid primary key,
-  client_id uuid references profiles(id),
-  lawyer_id uuid references lawyers(id),
-  appointment_type_id uuid references appointment_types(id),
-  scheduled_at timestamptz not null,
-  duration_minutes int default 60,
-  status text default 'pending', -- pending, confirmed, completed, cancelled
-  notes text,
-  client_notes text,
-  created_at timestamptz default now(),
-  updated_at timestamptz default now()
-)
-
-clients (
-  id uuid primary key,
-  user_id uuid references profiles(id),
-  phone text,
-  address text,
-  created_at timestamptz default now()
-)
-```
-
-## 5. KPI de Éxito
-
-**Métrica principal:** Permitir que un cliente agende una cita en menos de 2 minutos, con visibilidad completa de la agenda para el abogado.
-
-**Métricas secundarias:**
-- Tasa de confirmación de citas > 80%
-- Reducción de no-shows con recordatorios
-- Tiempo promedio de respuesta < 5 segundos
-
-## 6. Especificación Técnica
-
-### Features a Implementar (Feature-First)
+## 4. Struttura Pagine
 
 ```
-src/features/
-├── auth/              # Autenticación (YA IMPLEMENTADO)
-├── lawyers/           # CRUD abogados, perfiles, especialidades
-├── appointments/      # Gestión de citas, calendario
-├── availability/      # Horarios y disponibilidad
-├── clients/           # Gestión de clientes
-├── booking/           # Flujo de reserva para clientes
-├── notifications/     # Recordatorios y emails
-└── dashboard/         # Métricas y reportes
+/                          → Homepage (hero + griglia servizi + slider galleria)
+/torte-personalizzate      → Torte su misura
+/dolci-siciliani           → Tradizione siciliana
+/pizza-a-domicilio         → Pizza delivery
+/pasticceria               → Caffetteria e dolci
+/pane-e-colazione          → Panificio
+/catering-ed-eventi        → Spazio eventi
+/contatti                  → Contatti e orari
+/cookie-policy             → GDPR
+/privacy-policy            → GDPR
 ```
 
-### Stack Confirmado
-- **Frontend:** Next.js 16 + React 19 + TypeScript + Tailwind 3.4
-- **Backend:** Supabase (Auth + Database + Storage)
-- **Validación:** Zod
-- **State:** Zustand (si necesario)
-- **MCPs:** Next.js DevTools + Playwright + Supabase
+---
 
-### Fases de Implementación (Blueprint)
+## 5. Tech Stack
 
-1. [x] Auth base (COMPLETADO)
-2. [ ] Fase 2: Base de datos (tablas y RLS)
-3. [ ] Fase 3: Feature Lawyers (CRUD abogados)
-4. [ ] Fase 4: Feature Availability (horarios)
-5. [ ] Fase 5: Feature Appointments (citas)
-6. [ ] Fase 6: Feature Booking (flujo cliente)
-7. [ ] Fase 7: Dashboard y métricas
-8. [ ] Fase 8: Notificaciones
+| Layer | Tecnologia |
+|---|---|
+| Framework | Next.js 16 (App Router) + React 19 + TypeScript |
+| Styling | Tailwind CSS 3.4 |
+| Auth | Supabase SSR (area riservata futura) |
+| Immagini | Next.js Image (WebP ottimizzato) |
+| Animazioni | ScrollReveal custom + GoldLeafCanvas (canvas decorativo) |
+| Galleria | GallerySlider component custom |
+| SEO | Metadata API Next.js, canonical URL, JSON-LD LocalBusiness |
+| Deployment | Vercel |
+
+---
+
+## 6. Design System
+
+- **Brand:** Caldo, artigianale, siciliano — colori crema, oro, verde oliva
+- **Tono:** Tradizione + qualità + famiglia
+- **CTA principale:** WhatsApp (ordine diretto, senza frizioni)
+
+---
+
+## 7. KPI di Successo
+
+- Posizionamento per ricerche locali (Certosa di Pavia + tipo prodotto)
+- Click su CTA WhatsApp per ordini e preventivi
+- Richieste catering mensili
+- Core Web Vitals: LCP < 2.5s
+
+---
+
+## 8. Note Sviluppo
+
+- Il sito usa l'URL canonico `https://www.deliziedellacertosa.it`
+- `GoldLeafCanvas` è un componente canvas decorativo per effetti visivi sulla homepage
+- `GallerySlider` mostra foto dei prodotti con swipe mobile
+- Tutte le pagine servizio seguono la stessa struttura: hero + descrizione + galleria + CTA WhatsApp
+- Cookie banner conforme GDPR italiano
